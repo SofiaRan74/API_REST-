@@ -1,3 +1,10 @@
+// Permite buscar al presionar Enter
+document.getElementById("txtPais").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        consultarPais();
+    }
+});
+
 async function consultarPais() {
 
     const pais = document.getElementById("txtPais").value.trim();
@@ -23,7 +30,6 @@ async function consultarPais() {
         }
 
         const datos = await respuesta.json();
-
         const info = datos[0];
 
         resultado.innerHTML = `
@@ -32,15 +38,25 @@ async function consultarPais() {
 
                     <img
                         src="${info.flags.png}"
+                        alt="Bandera de ${info.name.common}"
                         class="bandera mb-3">
 
                     <h3>${info.name.common}</h3>
 
-                    <p><strong>Capital:</strong> ${info.capital ? info.capital[0] : "No disponible"}</p>
+                    <p>
+                        <strong>Capital:</strong>
+                        ${info.capital ? info.capital[0] : "No disponible"}
+                    </p>
 
-                    <p><strong>Región:</strong> ${info.region}</p>
+                    <p>
+                        <strong>Región:</strong>
+                        ${info.region}
+                    </p>
 
-                    <p><strong>Población:</strong> ${info.population.toLocaleString()}</p>
+                    <p>
+                        <strong>Población:</strong>
+                        ${info.population.toLocaleString()}
+                    </p>
 
                 </div>
             </div>

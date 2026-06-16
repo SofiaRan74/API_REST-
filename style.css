@@ -1,0 +1,34 @@
+body{
+    background: linear-gradient(135deg,#7b2cbf,#9d4edd);
+    min-height: 100vh;
+}
+
+.card{
+    border-radius: 20px;
+}
+
+.card-header{
+    background: #6a0dad;
+    color: white;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.btn-consultar{
+    background: #7b2cbf;
+    color: white;
+}
+
+.btn-consultar:hover{
+    background: #5a189a;
+    color: white;
+}
+
+#resultado{
+    margin-top: 20px;
+}
+
+.bandera{
+    width: 180px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
